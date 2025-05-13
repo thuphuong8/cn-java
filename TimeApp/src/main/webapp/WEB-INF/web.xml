@@ -1,0 +1,28 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.1">
+
+    <!-- Servlet -->
+    <servlet>
+        <servlet-name>TimeServlet</servlet-name>
+        <servlet-class>controller.TimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TimeServlet</servlet-name>
+        <url-pattern>/time</url-pattern>
+    </servlet-mapping>
+
+    <!-- Filter -->
+    <filter>
+        <filter-name>FormatFilter</filter-name>
+        <filter-class>controller.FormatFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FormatFilter</filter-name>
+        <url-pattern>/time</url-pattern>
+    </filter-mapping>
+
+    <!-- Listener -->
+    <listener>
+        <listener-class>controller.RequestListener</listener-class>
+    </listener>
+
+</web-app>
